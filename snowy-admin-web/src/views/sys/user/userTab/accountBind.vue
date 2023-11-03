@@ -26,20 +26,20 @@
 </template>
 
 <script setup>
-	import { message } from 'ant-design-vue'
-	import updatePassword from './bindForm/updatePassword.vue'
+import {message} from 'ant-design-vue'
+import updatePassword from './bindForm/updatePassword.vue'
 
-	const updatePasswordRef = ref()
+const updatePasswordRef = ref()
 	// 获取绑定的情况
 	const data = [
 		{ title: '密码强度', description: '当前密码强度', value: '弱', type: 'password', bindStatus: 0 },
 		/*{ title: '密保手机', description: '已绑定手机', value: '138****8293', type: 'phone', bindStatus: 1 },
 		{ title: '密保邮箱', description: '未绑定邮箱', value: '', type: 'email', bindStatus: 0 },
 		{ title: '实名状态', description: '未实名', value: '', type: 'userReal', bindStatus: 0 },*/
-		{ title: '绑定QQ', description: '未绑定', value: '', type: 'qq', bindStatus: 0 },
+		/*{ title: '绑定QQ', description: '未绑定', value: '', type: 'qq', bindStatus: 0 },
 		{ title: '绑定微信', description: '未绑定', value: '', type: 'weChat', bindStatus: 0 },
 		{ title: '绑定支付宝', description: '未绑定', value: '', type: 'AliPay', bindStatus: 0 },
-		{ title: '绑定Gitee', description: '未绑定', value: '', type: 'Gitee', bindStatus: 0 }
+		{ title: '绑定Gitee', description: '未绑定', value: '', type: 'Gitee', bindStatus: 0 }*/
 	]
 	const bindCommon = (key) => {
 		if (key === 'password') {

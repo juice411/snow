@@ -1,10 +1,10 @@
 <template>
 	<div class="user-bar">
 		<!-- 搜索面板 -->
-		<panel-search v-if="!isMobile" />
+<!--		<panel-search v-if="!isMobile" />
 		<div v-if="!isMobile" class="screen panel-item hidden-sm-and-down" @click="fullscreen">
 			<fullscreen-outlined />
-		</div>
+		</div>-->
 		<!--		<dev-user-message />-->
 		<a-dropdown class="user panel-item">
 			<div class="user-avatar">
@@ -29,7 +29,7 @@
 				</a-menu>
 			</template>
 		</a-dropdown>
-		<a-dropdown v-if="!isMobile" class="panel-item">
+<!--		<a-dropdown v-if="!isMobile" class="panel-item">
 			<global-outlined />
 			<template #overlay>
 				<a-menu :selected-keys="lang">
@@ -41,7 +41,7 @@
 					</a-menu-item>
 				</a-menu>
 			</template>
-		</a-dropdown>
+		</a-dropdown>-->
 		<div v-if="setDrawer === 'true'" class="setting panel-item" @click="openSetting">
 			<layout-outlined />
 		</div>
@@ -54,21 +54,19 @@
 </template>
 
 <script setup name="layoutUserBar">
-	import { createVNode } from 'vue'
-	import { ExclamationCircleOutlined } from '@ant-design/icons-vue'
-	import { Modal } from 'ant-design-vue'
-	import screenFull from 'screenfull'
-	import { message } from 'ant-design-vue'
-	import Setting from './setting.vue'
-	import router from '@/router'
-	import tool from '@/utils/tool'
-	import config from '@/config/index'
-	import loginApi from '@/api/auth/loginApi'
-	import DevUserMessage from './message.vue'
-	import PanelSearch from './panel-search/index.vue'
-	import { globalStore } from '@/store'
-	import { useI18n } from 'vue-i18n'
-	const { locale } = useI18n()
+import {createVNode} from 'vue'
+import {ExclamationCircleOutlined} from '@ant-design/icons-vue'
+import {message, Modal} from 'ant-design-vue'
+import screenFull from 'screenfull'
+import Setting from './setting.vue'
+import router from '@/router'
+import tool from '@/utils/tool'
+import config from '@/config/index'
+import loginApi from '@/api/auth/loginApi'
+import {globalStore} from '@/store'
+import {useI18n} from 'vue-i18n'
+
+const { locale } = useI18n()
 
 	const lang = ref(new Array(tool.data.get('APP_LANG') || config.LANG))
 	const settingDialog = ref(false)

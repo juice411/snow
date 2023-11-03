@@ -49,6 +49,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -93,6 +94,11 @@ public class DevFileServiceImpl extends ServiceImpl<DevFileMapper, DevFile> impl
         }
         if(ObjectUtil.isNotEmpty(devFileListParam.getSearchKey())) {
             queryWrapper.lambda().like(DevFile::getName, devFileListParam.getSearchKey());
+        }
+        String idStr = devFileListParam.getIdStr();
+        if(ObjectUtil.isNotEmpty(idStr)) {
+            String[] idStrArr = idStr.split(";");
+            queryWrapper.lambda().in(DevFile::getId, Arrays.asList(idStrArr));
         }
         return this.list(queryWrapper);
     }

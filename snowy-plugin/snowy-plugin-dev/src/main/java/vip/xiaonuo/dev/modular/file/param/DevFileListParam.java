@@ -33,4 +33,8 @@ public class DevFileListParam {
     /** 文件名关键词 */
     @ApiModelProperty(value = "文件名关键词")
     private String searchKey;
+
+    /** id以;进行分割 */
+    @ApiModelProperty(value = "文件名关键词")
+    private String idStr;
 }

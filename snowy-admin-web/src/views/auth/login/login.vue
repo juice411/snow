@@ -91,7 +91,7 @@
 							<phone-login-form />
 						</a-tab-pane>
 					</a-tabs>
-					<three-login />
+<!--					<three-login />-->
 				</a-card>
 			</div>
 		</div>
@@ -99,19 +99,19 @@
 </template>
 
 <script>
-	import loginApi from '@/api/auth/loginApi'
-	import phoneLoginForm from './phoneLoginForm.vue'
-	import threeLogin from './threeLogin.vue'
-	import smCrypto from '@/utils/smCrypto'
-	import { required } from '@/utils/formRules'
-	import { afterLogin } from './util'
-	import config from '@/config'
-	import configApi from '@/api/dev/configApi'
-	import tool from '@/utils/tool'
-	import { globalStore, iframeStore, keepAliveStore, viewTagsStore } from '@/store'
-	import { mapActions, mapState } from 'pinia'
+import loginApi from '@/api/auth/loginApi'
+import phoneLoginForm from './phoneLoginForm.vue'
+import threeLogin from './threeLogin.vue'
+import smCrypto from '@/utils/smCrypto'
+import {required} from '@/utils/formRules'
+import {afterLogin} from './util'
+import config from '@/config'
+import configApi from '@/api/dev/configApi'
+import tool from '@/utils/tool'
+import {globalStore, iframeStore, keepAliveStore, viewTagsStore} from '@/store'
+import {mapActions, mapState} from 'pinia'
 
-	export default {
+export default {
 		name: 'Login',
 		components: {
 			phoneLoginForm,
@@ -123,8 +123,8 @@
 				captchaOpen: config.SYS_BASE_CONFIG.SNOWY_SYS_DEFAULT_CAPTCHA_OPEN,
 				validCodeBase64: '',
 				ruleForm: {
-					account: 'superAdmin',
-					password: '123456',
+					account: '',
+					password: '',
 					validCode: '',
 					validCodeReqNo: '',
 					autologin: false

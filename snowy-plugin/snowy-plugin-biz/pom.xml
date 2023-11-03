@@ -38,5 +38,11 @@
             <groupId>vip.xiaonuo</groupId>
             <artifactId>snowy-plugin-dev-api</artifactId>
         </dependency>
+
+        <!-- juice引入系统工具接口，用于授权角色等访问附件列表等功能 -->
+        <dependency>
+            <groupId>vip.xiaonuo</groupId>
+            <artifactId>snowy-plugin-dev</artifactId>
+        </dependency>
     </dependencies>
 </project>
